@@ -27,6 +27,10 @@ use App\Http\Controllers\OrderDetailController;
 //});
 
 Route::get('/',[ProductController::class,'index'])->middleware('auth')->name('product');
+Route::post('/save-products',[ProductController::class, 'save_products'])->name('saveProducts');
+Route::get('/delete-products/{id}', [ProductController::class, 'delete_products'])->name('removeProducts');
+Route::get('/update-products/{id}', [ProductController::class, 'update_products'])->name('updateProducts');
+Route::post('/save-updated-products', [ProductController::class, 'save_updated_products'])->name('saveUpdatedProducts');
 
 Route::get('/supplier',[SupplierController::class,'index'])->middleware('auth')->name('supplier');
 Route::get('/category',[CategoryController::class,'index'])->middleware('auth')->name('category');

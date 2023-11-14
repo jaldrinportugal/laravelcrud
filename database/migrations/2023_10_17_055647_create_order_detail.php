@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id('OrderDetailID');
-            $table->unsignedInteger('OrderID');
-            $table->foreign('OrderID')->references('OrderID')->on('orders');
-            $table->unsignedInteger('ProductID');
-            $table->foreign('ProductID')->references('ProductID')->on('products');
+            $table->Integer('OrderID');
+            $table->Integer('ProductID');
             $table->string('Quantity');
             $table->string('Subtotal');
         });
